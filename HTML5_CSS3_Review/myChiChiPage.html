@@ -1,0 +1,886 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>My Combined CSS CHI CHI</title>
+    <style>
+        #table1 {
+            border: 1px solid orange;
+            border-spacing: 1.5em;
+            caption-side: bottom;
+        }
+
+        #table2 td {
+            border: 1px solid black;
+            border-spacing: 1px;
+        }
+
+        tr.firstrow {
+            border: 3em solid black;
+            border-spacing: 1px;
+            background-color: #999999;
+        }
+
+
+        col.firstcolumn {
+            border: 1px solid black;
+            border-spacing: 1px;
+            background-color: #999999;
+        }
+
+
+        #table5 {
+            border-collapse: seperate;
+            border-spacing: 0px;
+            border: 2px solid black;
+            caption-side: top;
+        }
+
+            #table5 thead th {
+            }
+
+            #table5 thead td {
+            }
+
+            #table5 tfoot th {
+            }
+
+            #table5 tfoot td {
+            }
+
+            #table5 tbody th {
+            }
+
+            #table5 tbody td {
+                border-width: 1px;
+                border-style: solid;
+                border-color: blue;
+            }
+
+
+        #table6 {
+            border-collapse: collapse;
+            border: 2em solid black;
+            caption-side: top;
+        }
+
+            #table6 thead {
+            }
+
+            #table6 tbody tr {
+            }
+
+            #table6 tbody td {
+                border: 1px solid blue;
+            }
+            /*this is the short cut of border-width: 1px; border-style:solid; border-color:blue;*/
+            #table6 colgroup {
+            }
+
+            #table6 col {
+            }
+
+            #table6 td {
+            }
+
+            #table6 th {
+            }
+
+            #table6 tfoot {
+            }
+    </style>
+</head>
+
+<header>
+    <li><a href="index.html">Home</a></li>
+</header>
+<p>
+    <ul style="list-style-type:none;">
+        <li style="float:left;margin:5px;"><a href="#n1">Font&Text</a>
+        <li style="float:left;margin:5px;"><a href="#n2">Color&Background</a>
+        <li style="float:left;margin:5px;"><a href="#n3">List&Table</a>
+        <li style="float:left;margin:5px;"><a href="#n4">Box || Block</a>
+    </ul>
+</p>
+<hr style="clear:both;">
+
+<p><a name="n1"></a></p>
+<h1>font-family</h1>
+<p><a href="http://kyleschaeffer.com/best-practices/css-font-size-em-vs-px-vs-pt-vs" alt="Artical on font size" target="_blank">CSS Font size</a></p>
+<p style="font-family:Arial;">font-family:Arial;</p>
+<p style="font-family:Times;">font-family:Times;</p>
+<p style="font-family:Georgia;">font-family:Georgia;</p>
+<p style="font-family:Constantia;">font-family:Constantia;</p>
+
+<hr>
+
+<h1>font-size</h1>
+<p style="font-size:1em;">font-size:1em;</p>
+<p style="font-size:1.3em;">font-size:1.3em;</p>
+<p style="font-size:110%;">font-size:110%;</p>
+<p style="font-size:14px;">font-size:14px;</p> <!-- not reliable, can't scale-->
+<p style="font-size:smaller;">font-size:smaller;</p>
+<p style="font-size:small;">font-size:small;</p>
+<p style="font-size:medium;">font-size:medium;</p>
+<p style="font-size:large;">font-size:large;</p>
+<p style="font-size:larger;">font-size:larger;</p>
+<p style="font-size:x-large;">font-size:x-large;</p>
+<p style="font-size:xx-large;">font-size:xx-large;</p>
+
+<hr>
+
+<h1>font-weight</h1>
+<p style="font-weight:normal;">font-weight:normal;</p>
+<p style="font-weight:lighter;">font-weight:lighter;</p>
+<p style="font-weight:bold;">font-weight:bold;</p>
+<p style="font-weight:bolder;">font-weight:bolder;</p>
+<p style="font-weight:100;">font-weight:100;</p>
+<p style="font-weight:900;">font-weight:900;</p>
+
+<hr>
+
+<h1>font-style</h1>
+<p style="font-style:normal;">font-style:normal;</p>
+<p style="font-style:italic;">font-style:italic;</p>
+<p style="font-style:oblique;">font-style:oblique;</p>
+
+<hr>
+
+<h1>font-variant</h1>
+<p style="font-variant:normal;">font-variant:normal;</p>
+<p style="font-variant:small-caps;">font-variant:small-caps;</p>
+
+<hr>
+
+<h1>letter-spacing</h1>
+<p style="letter-spacing:normal;">letter-spacing:normal;</p>
+<p style="letter-spacing:.2em;">letter-spacing:.2em;</p>
+
+<hr>
+
+<h1>word-spacing</h1>
+<p style="word-spacing:normal;">word-spacing:normal; This is a test.</p>
+<p style="word-spacing:.5em;">word-spacing:.5em; This is a test.</p>
+
+<hr>
+
+<h1>line-height</h1>
+<p style="line-height:normal;">Line height example 1 - If one is master of one thing and understands one thing well, one has at the same time, insight into and understanding of many things. - Vincent Van Gogh</p>
+<p style="line-height:2em;">Line height example 2 - When I'm painting, I'm not aware of what I'm doing. It's only after a get acquainted period that I see what I've been about. I've no fears about making changes for the painting has a life of its own. - Jackson Pollock</p>
+
+<hr>
+
+<h1>text-transform</h1>
+<p style="text-transform:capitalize;">text-transform: capitalize;</p>
+<p style="text-transform:uppercase;">text-transform: uppercase;</p>
+<p style="text-transform:lowercase;">Text-transform: lowercase;</p>
+
+<hr>
+
+<h1>text-align</h1>
+<p style="text-align:left;">text-align:left;</p>
+<p style="text-align:center;">text-align:center;</p>
+<p style="text-align:right;">text-align:right;</p>
+
+<hr>
+
+<h1>vertical-align</h1>
+
+
+<p>
+    <h1 style="font-size:36px;line-height:1.2em;">
+        Text
+        <span style="font-size:14px;vertical-align:top;">vertical-align:top;</span>
+    </h1>
+</p>
+
+<p>
+    <h1 style="font-size:36px;line-height:1.2em;">
+        Text
+        <span style="font-size:14px;vertical-align:middle;">vertical-align:middle;</span>
+    </h1>
+</p>
+
+<p>
+    <h1 style="font-size:36px;line-height:1.2em;">
+        Text
+        <span style="font-size:14px;vertical-align:bottom;">vertical-align:bottom;</span>
+    </h1>
+</p>
+
+<p>
+    <h1 style="font-size:36px;line-height:1.2em;">
+        Text
+        <span style="font-size:14px;vertical-align:super;">vertical-align:super;</span>
+    </h1>
+</p>
+
+<p>
+    <h1 style="font-size:36px;line-height:1.2em;">
+        Text
+        <span style="font-size:14px;vertical-align:sub;">vertical-align:sub;</span>
+    </h1>
+</p>
+
+<p>
+    <h1 style="font-size:36px;line-height:1.2em;">
+        Text
+        <span style="font-size:14px;vertical-align:baseline;">vertical-align:baseline;</span>
+    </h1>
+</p>
+
+<p>
+    <h1 style="font-size:36px;line-height:1.2em;">
+        Text
+        <span style="font-size:14px;vertical-align:text-top;">vertical-align:text-top;</span>
+    </h1>
+</p>
+
+<p>
+    <h1 style="font-size:36px;line-height:1.2em;">
+        Text
+        <span style="font-size:14px;vertical-align:text-bottom;">vertical-align:text-bottom;</span>
+    </h1>
+</p>
+
+
+
+<hr>
+
+<h1>text-indent</h1>
+<p style="text-indent:0px;">text-indent:0px;</p>
+<p style="text-indent:25px;">text-indent:25px;</p>
+
+<hr>
+
+<h1>white-space</h1>
+<p style="white-space:normal">white-space:normal - If one is master of one thing and understands one thing well, one has at the same time, insight into and understanding of many things. - Vincent Van Gogh</p>
+<p style="white-space:pre">white-space:pre - If   one   is   master of one thing and understands one thing well, one has at the same time, insight into and understanding of many things. - Vincent Van Gogh</p>
+<p style="white-space:nowrap">white-space:nowrap - If   one   is   master of one thing and understands one thing well, one has at the same time, insight into and understanding of many things. - Vincent Van Gogh</p>
+
+<hr>
+
+<h1>text-decoration</h1>
+<p style="text-decoration:none;">text-decoration:none;</p>
+<p style="text-decoration:underline;">text-decoration:underline;</p>
+<p style="text-decoration:overline;">text-decoration:overline;</p>
+<p style="text-decoration:line-through;">text-decoration:line-through;</p>
+
+<hr>
+<pre>
+     o   o
+      )-(
+     (O O)
+      \=/
+     .-"-.
+    //\ /\\
+  _// / \ \\_
+ =./ {.-.} \.=
+     || ||
+     || ||  
+   __|| ||__
+  '---" "---'
+</pre>
+<hr>
+<p><a name="n2"></a></p>
+
+<p>
+    <ul style="list-style-type:none;">
+        <li style="float:left;margin:5px;"><a href="#n1">Font&Text</a>
+        <li style="float:left;margin:5px;"><a href="#n2">Color&Background</a>
+        <li style="float:left;margin:5px;"><a href="#n3">List&Table</a>
+        <li style="float:left;margin:5px;"><a href="#n4">Box || Block</a>
+    </ul>
+</p>
+<hr style="clear:both;">
+
+<h1>Defining Colors</h1>
+
+<p style="color:blue;">color:blue;</p>
+<p style="color:#0000FF;">color:#0000FF;</p>
+<p style="color:rgb(0,0,255)">color:rgb(0,0,255);</p>
+
+<h1>background-color</h1>
+
+<div style="background-color:#999999;width:200px;height:50px;margin-bottom:10px;">
+    <p>background-color:#999999;</p>
+</div>
+
+<h1>background-image</h1>
+
+<div style="background-image:none;width:200px;height:200px;margin-bottom:10px;border:1px solid black;">
+    <p>background-image:none;</p>
+</div>
+
+<div style="background-image:url(http://placekitten.com/g/90/140);width:200px;height:200px;margin-bottom:10px;border:1px solid black;">
+    <p style="color:white;">background-image:url(http://placekitten.com/g/90/140);</p>
+</div>
+
+<h1>background-repeat</h1>
+
+<div style="background-image:url(http://placekitten.com/g/90/140);background-repeat:repeat;width:200px;height:200px;margin-bottom:10px;border:1px solid black;">
+    <p style="color:white;">background-repeat:repeat;</p>
+</div>
+
+<div style="background-image:url(http://placekitten.com/90/140);background-repeat:repeat-x;width:200px;height:200px;margin-bottom:10px;border:1px solid black;">
+    <p style="color:white;">background-repeat:repeat-x;</p>
+</div>
+
+<div style="background-image:url(http://placekitten.com/90/140);background-repeat:repeat-y;width:200px;height:200px;margin-bottom:10px;border:1px solid black;">
+    <p">background-repeat:repeat-y;</p>
+</div>
+
+<div style="background-image:url(http://placekitten.com/90/140);background-repeat:no-repeat;width:200px;height:200px;margin-bottom:10px;border:1px solid black;">
+    <p>background-repeat:no-repeat;</p>
+</div>
+
+<h1>background-attachment</h1>
+
+<p>
+    Note: Seems to only be applicable to the body of the entire page.  Usage:<br><br>
+
+    background-image:url(http://placekitten.com/200/200);<br>
+    background-repeat:no-repeat;<br>
+    <strong>background-attachment:fixed;</strong><br><br>
+
+    scroll - Background image DOES scroll with the page.
+    fixed - Background image DOES NOT scroll with the page.
+
+    <h1>background-position</h1>
+
+    <div style="background-image:url(http://placekitten.com/90/140);background-repeat:no-repeat;background-position:right top;width:200px;height:200px;margin-bottom:10px;border:1px solid black;">
+<p>background-position:right top;</p>
+</div>
+
+
+<h1>background-shorthand</h1>
+
+background: [color] [image] [position] [repeat] [attachment]
+
+<hr>
+<pre>
+     o   o
+      )-(
+     (O O)
+      \=/
+     .-"-.
+    //\ /\\
+  _// / \ \\_
+ =./ {.-.} \.=
+     || ||
+     || ||  
+   __|| ||__
+  '---" "---'
+</pre>
+<hr>
+
+<p><a name="n3"></a></p>
+
+<p>
+    <ul style="list-style-type:none;">
+        <li style="float:left;margin:5px;"><a href="#n1">Font&Text</a>
+        <li style="float:left;margin:5px;"><a href="#n2">Color&Background</a>
+        <li style="float:left;margin:5px;"><a href="#n3">List&Table</a>
+        <li style="float:left;margin:5px;"><a href="#n4">Box || Block</a>
+    </ul>
+</p>
+<hr style="clear:both;">
+
+<h1>LIST & TABLE</h1>
+<br><br>
+<h1>Lists</h1>
+
+<h2>list-style-type</h2>
+
+<ul>
+    <li style="list-style-type:none;">list-style-type:none;</li>
+    <li style="list-style-type:disc;">list-style-type:disc;</li>
+    <li style="list-style-type:circle;">list-style-type:circle;</li>
+    <li style="list-style-type:square;">list-style-type:square;</li>
+    <li style="list-style-type:decimal-leading-zero;">list-style-type:decimal-leading-zero;</li>
+    <li style="list-style-type:upper-roman;">list-style-type:upper-roman;</li>
+    <li style="list-style-type:upper-alpha;">list-style-type:upper-alpha;</li>
+    <li style="list-style-type:lower-alpha;">list-style-type:lower-alpha;</li>
+    <li style="list-style-type:lower-greek;">list-style-type:lower-greek;</li>
+</ul>
+
+<h2>list-style-image</h2>
+
+<ul>
+    <li style="list-style-image:none;">list-style-image:none;</li>
+    <li style="list-style-image:url(http://placekitten.com/200/300);">list-style-image:url(http://placekitten.com/200/300);</li>
+    <li style="list-style-image:url(http://placekitten.com/90/140);">list-style-image:url(http://placekitten.com/90/140);</li>
+</ul>
+
+<h2>list-style-position</h2>
+
+<ul>
+    <li style="list-style-position:outside;">list-style-position:outside;</li>
+    <li style="list-style-position:inside;">list-style-position:inside;</li>
+</ul>
+
+<h2>Shortcut for list-styles</h2>
+
+
+list-style: [list-style-type] [list-style-position] [list-style-image]
+
+
+
+<h1>Creating a horizontal menu with unordered lists</h1>
+
+<p>The key is &quot;float:left;&quot;</p>
+
+<ul>
+    <li style="list-style-type:none;float:left;margin-right:10px;">Home</li>
+    <li style="list-style-type:none;float:left;margin-right:10px;">About</li>
+    <li style="list-style-type:none;float:left;margin-right:10px;">Contact Us</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<h1>Tables</h1>
+
+<p>
+    Styling tables is a bit more involved than working with fonts, text, lists, etc.  There are so many ways to slice and dice the formatting of cells, rows, columns and the table itself.  Here's a few examples to understand the IMPACT of various settings.  A fully styled table is the domain of a talented designer.
+
+    <h2>Example 1</h2>
+
+<p>
+    I've put a border around the entire table (border:1px solid black), AND set added a &quot;margin&quot; between the various borders (border-spacing:1.5em;)  Caption is on bottom (caption:bottom;)
+
+    <table id="table1">
+        <caption>
+            This is the caption, the style is set to caption-side:bottom;
+            <tr>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+                <td>Lorem ipsum dolor sit amet,
+                <td>Lorem
+            <tr>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+                <td>Lorem ipsum dolor sit amet,
+                <td>Lorem
+    </table>
+
+    <hr>
+
+    <h2>Example 2</h2>
+
+<p>Here I applied the border to the cells instead of the entire table.  You can see a 1px border space.  This <strong>could</strong> be removed using the table's cellspacing='0' attribute.</p>
+
+<table id="table2">
+    <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+        <td>Lorem ipsum dolor sit amet,
+        <td>Lorem
+    <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+        <td>Lorem ipsum dolor sit amet,
+        <td>Lorem
+</table>
+
+<hr>
+
+<h2>Example 3</h2>
+
+<p>Here I'm applying a background-color to an entire row.  Notice, we still have the 1px border space (per above).  We will fix that in the next example.</p>
+
+<table id="table3">
+    <tr class="firstrow">
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+        <td>Lorem ipsum dolor sit amet,
+        <td>Lorem
+    <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+        <td>Lorem ipsum dolor sit amet,
+        <td>Lorem
+</table>
+
+
+<hr>
+
+<h2>Example 4</h2>
+
+<p>Here I'm applying a background-color to an entire column.  I also set the cellspacing attribute to 0 on the table to remove the default 1px space between cells.</p>
+
+<table id="table4" cellspacing="0">
+    <col class="firstcolumn">
+    <col>
+    <col class="lastcolumn">
+    <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+        <td>Lorem ipsum dolor sit amet,
+        <td>Lorem
+    <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+        <td>Lorem ipsum dolor sit amet,
+        <td>Lorem
+</table>
+
+<hr>
+
+<h2>Example 5</h2>
+
+<p>In examples 5 and 6, we play with the border-collapse attribute.  Setting it to separate will double the borders between the cells.</p>
+
+<table id="table5">
+    <col>
+    <col>
+    <col>
+    <thead>
+        <tr>
+            <th>Header 1
+            <th>H2
+            <th>H3
+    <tfoot>
+        <tr>
+            <td>Footer 1
+            <td>F2
+            <td>F3
+    <tbody>
+        <tr>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+            <td>Lorem ipsum dolor sit amet,
+            <td>Lorem
+        <tr>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+            <td>Lorem ipsum dolor sit amet,
+            <td>Lorem
+</table>
+
+<hr>
+
+<h2>Example 6</h2>
+
+<p>In this example, we set the border-collapse attribute to collapsed.  As a result, there's only a 1px border around the cells.</p>
+
+<table id="table6">
+    <col>
+    <col>
+    <col>
+    <thead>
+        <tr>
+            <th>Header 1
+            <th>H2
+            <th>H3
+    <tfoot>
+        <tr>
+            <td>Footer 1
+            <td>F2
+            <td>F3
+    <tbody>
+        <tr>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+            <td>Lorem ipsum dolor sit amet,
+            <td>Lorem
+        <tr>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+            <td>Lorem ipsum dolor sit amet,
+            <td>Lorem
+</table>
+<hr>
+<hr>
+<span style="color:red;font-weight:bolder;font-size:2em;">
+<pre>
+     o   o
+      )-(
+     (O O)
+      \=/
+     .-"-.
+    //\ /\\
+  _// / \ \\_
+ =./ {.-.} \.=
+     || ||
+     || ||  
+   __|| ||__
+  '---" "---'
+</pre>
+</span>
+<hr>
+
+<p><a name="n4"></a></p>
+
+<p>
+    <ul style="list-style-type:none;">
+        <li style="float:left;margin:5px;"><a href="#n1">Font&Text</a>
+        <li style="float:left;margin:5px;"><a href="#n2">Color&Background</a>
+        <li style="float:left;margin:5px;"><a href="#n3">List&Table</a>
+        <li style="float:left;margin:5px;"><a href="#n4">Box || Block</a>
+    </ul>
+</p>
+<hr style="clear:both;">
+
+<h1></h1>
+
+
+<p>
+    Important concept: Some HTML tags are treated as "boxes", while others are treated as just text.  What's the difference?
+
+
+    <h2>Example 1</h2>
+
+<p>Here's a div that is 200x200.</p>
+
+<div style="width:200px;height:200px;background-color:yellow;margin-bottom:10px;">
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna.
+
+</div>
+
+
+<h2>Example 2</h2>
+
+<p>Here's a div that is 200x200.  Why is this so much larger?  Because it also has 10px padding and a 10px border.</p>
+
+<div style="width:200px;height:200px;border:10px black solid;padding:10px;background-color:yellow;">
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna.
+
+</div>
+
+<h2>Example 3</h2>
+
+<p>
+    These three divs have their display value set to the default (block).
+
+    <div style="width:50%;">
+
+        <div style="background-color:red;">First</div>
+
+        <div style="background-color:red;">Second</div>
+
+        <div style="background-color:red;">Third</div>
+
+    </div>
+
+    <hr style="clear:both;">
+
+    <h2>Example 4</h2>
+
+<p>
+    These three divs have their display value set to inline.
+
+
+    <div style="width:50%;">
+
+        <div style="background-color:red;display:inline;">First</div>
+
+        <div style="background-color:red;display:inline;">Second</div>
+
+        <div style="background-color:red;display:inline;">Third</div>
+
+    </div>
+
+
+    <h2>Example 5</h2>
+
+<p>
+    This same is true with the H3 tags ... notice by default they are display:block;
+
+    <h3 style="background-color:blue;color:white;">This is an H3</h3>
+    <h3 style="background-color:blue;color:white;">This is an H3</h3>
+    <h3 style="background-color:blue;color:white;">This is an H3</h3>
+
+    <h2>Example 6</h2>
+
+<p>
+    Notice what happens when we set these H3's to display:inline;
+
+    <h3 style="background-color:blue;color:white;display:inline;">This is an H3</h3>
+    <h3 style="background-color:blue;color:white;display:inline;">This is an H3</h3>
+    <h3 style="background-color:blue;color:white;display:inline;">This is an H3</h3>
+
+    <h2>Example 7</h2>
+
+<p>
+    This is how most people did layout prior to CSS Frameworks like 960, Blueprint, CSSGrid or Bootstrap.  (I'm over-simplifying, but you get the idea.)  Designers used a lot of float:left, float:right and divs.
+
+    <div class="wrapper">
+        <div style="width:30%;float:left;margin-right:10px;">
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet tempor nisl sed ultricies. Aenean accumsan dolor et libero iaculis adipiscing. Suspendisse quis ante sit amet dui tempor scelerisque in a lorem. Aenean mi odio, sodales in lacinia nec, feugiat id magna. Quisque pretium nisl nec massa porttitor venenatis. Quisque quis lacus sed nisi ultrices tincidunt. Nam mollis tortor vel lacus fermentum feugiat. Sed laoreet bibendum felis, sit amet euismod lectus vulputate in. Donec felis leo, auctor eu faucibus a, molestie sed tellus.
+    </div>
+
+    <div style="width:50%;float:left;">
+<p>
+    In sed nunc nec mauris feugiat suscipit. Cras venenatis enim sem. Donec pretium volutpat eros, vel pretium turpis accumsan id. Fusce porttitor volutpat felis non convallis. Aliquam erat volutpat. Aliquam lobortis pretium porta. Vestibulum a justo leo, a pulvinar lacus. Praesent laoreet nisi nec dui bibendum cursus. Donec in lobortis tortor. Quisque urna diam, vehicula auctor vulputate eget, laoreet at sem. Nulla varius pretium pharetra. Mauris sed risus vitae lorem sollicitudin convallis vitae hendrerit justo. Maecenas ligula enim, aliquam ac molestie quis, lobortis sit amet elit. Nam eu purus et mauris fermentum malesuada. Suspendisse potenti.
+    </div>
+
+    <div style="width:15%;float:right;">
+        <h1 style="line-height:0px;">My Blog</h1>
+        <ul>
+            <li style="list-style-type:none;"><a href="#">Home</a></li>
+            <li style="list-style-type:none;"><a href="#">About</a></li>
+            <li style="list-style-type:none;"><a href="#">FAQ</a></li>
+        </ul>
+    </div>
+
+    </div>
+
+
+
+    <hr style="clear:both;"> <!-- clear the floats, so that it can be displayed by itsown -->
+
+<p>
+    Before moving on, notice the hr tag in this example (above) has a style=&quot;clear:both;&quot; applied.  Use this to clear out of floated elements.  Try removing the clear attribute to see what happens.  By adding it back in, we are saying that both left and right sides should not be floated, so it will end up on its own &quot;line&quot;.  Other settings are: None, Both, Left, Right.  This is used often when using a floating-div layout approach.
+
+    <h2>Example 8</h2>
+
+    <div style="margin-bottom:10px;width:100px;height:100px;border-width:10px;border-color:blue;border-style:none;">border-style:none;</div>
+    <div style="margin-bottom:10px;width:100px;height:100px;border-width:10px;border-color:blue;border-style:solid;">border-style:solid;</div>
+    <div style="margin-bottom:10px;width:100px;height:100px;border-width:10px;border-color:blue;border-style:dotted;">border-style:dotted;</div>
+    <div style="margin-bottom:10px;width:100px;height:100px;border-width:10px;border-color:blue;border-style:dashed;">border-style:dashed;</div>
+    <div style="margin-bottom:10px;width:100px;height:100px;border-width:10px;border-color:blue;border-style:double;">border-style:double;</div>
+    <div style="margin-bottom:10px;width:100px;height:100px;border-width:10px;border-color:blue;border-style:groove;">border-style:groove;</div>
+    <div style="margin-bottom:10px;width:100px;height:100px;border-width:10px;border-color:blue;border-style:ridge;">border-style:ridge;</div>
+    <div style="margin-bottom:10px;width:100px;height:100px;border-width:10px;border-color:blue;border-style:inset;">border-style:inset;</div>
+    <div style="margin-bottom:10px;width:100px;height:100px;border-width:10px;border-color:blue;border-style:outset;">border-style:outset;</div>
+
+    <h2>Example 9</h2>
+
+    <div>
+
+        <h3>overflow:auto;</h3>
+
+        <div style="width:200px;height:200px;background-color:yellow;overflow:auto;margin-bottom:10px;">
+<p>
+    In sed nunc nec mauris feugiat suscipit. Cras venenatis enim sem. Donec pretium volutpat eros, vel pretium turpis accumsan id. Fusce porttitor volutpat felis non convallis. Aliquam erat volutpat. Aliquam lobortis pretium porta. Vestibulum a justo leo, a pulvinar lacus. Praesent laoreet nisi nec dui bibendum cursus. Donec in lobortis tortor. Quisque urna diam, vehicula auctor vulputate eget, laoreet at sem. Nulla varius pretium pharetra. Mauris sed risus vitae lorem sollicitudin convallis vitae hendrerit justo. Maecenas ligula enim, aliquam ac molestie quis, lobortis sit amet elit. Nam eu purus et mauris fermentum malesuada. Suspendisse potenti.
+    </div>
+
+    <h3>overflow:scroll;</h3>
+    <h4>If you have a large image, horizontal scrol bar will display</h4>
+
+    <div style="width:200px;height:200px;background-color:yellow;overflow:scroll;margin-bottom:10px;">
+<p>
+    In sed nunc nec mauris feugiat suscipit. Cras venenatis enim sem. Donec pretium volutpat eros, vel pretium turpis accumsan id. Fusce porttitor volutpat felis non convallis. Aliquam erat volutpat. Aliquam lobortis pretium porta. Vestibulum a justo leo, a pulvinar lacus. Praesent laoreet nisi nec dui bibendum cursus. Donec in lobortis tortor. Quisque urna diam, vehicula auctor vulputate eget, laoreet at sem. Nulla varius pretium pharetra. Mauris sed risus vitae lorem sollicitudin convallis vitae hendrerit justo. Maecenas ligula enim, aliquam ac molestie quis, lobortis sit amet elit. Nam eu purus et mauris fermentum malesuada. Suspendisse potenti.
+    </div>
+
+    <h3>overflow:hidden;</h3><!-- this will cut any text out of the box-->
+
+    <div style="width:200px;height:200px;background-color:yellow;overflow:hidden;margin-bottom:10px;">
+<p>
+    In sed nunc nec mauris feugiat suscipit. Cras venenatis enim sem. Donec pretium volutpat eros, vel pretium turpis accumsan id. Fusce porttitor volutpat felis non convallis. Aliquam erat volutpat. Aliquam lobortis pretium porta. Vestibulum a justo leo, a pulvinar lacus. Praesent laoreet nisi nec dui bibendum cursus. Donec in lobortis tortor. Quisque urna diam, vehicula auctor vulputate eget, laoreet at sem. Nulla varius pretium pharetra. Mauris sed risus vitae lorem sollicitudin convallis vitae hendrerit justo. Maecenas ligula enim, aliquam ac molestie quis, lobortis sit amet elit. Nam eu purus et mauris fermentum malesuada. Suspendisse potenti.
+    </div>
+
+    <h3>overflow:visible;</h3>
+
+    <div style="width:200px;height:200px;background-color:yellow;overflow:visible;margin-bottom:10px;">
+<p>
+    In sed nunc nec mauris feugiat suscipit. Cras venenatis enim sem. Donec pretium volutpat eros, vel pretium turpis accumsan id. Fusce porttitor volutpat felis non convallis. Aliquam erat volutpat. Aliquam lobortis pretium porta. Vestibulum a justo leo, a pulvinar lacus. Praesent laoreet nisi nec dui bibendum cursus. Donec in lobortis tortor. Quisque urna diam, vehicula auctor vulputate eget, laoreet at sem. Nulla varius pretium pharetra. Mauris sed risus vitae lorem sollicitudin convallis vitae hendrerit justo. Maecenas ligula enim, aliquam ac molestie quis, lobortis sit amet elit. Nam eu purus et mauris fermentum malesuada. Suspendisse potenti.
+    </div>
+
+    <div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<h2 style="clear:both;">
+
+    <h2>Example 10</h2>
+
+    Padding and Margin Examples
+
+    <h3 style="margin-left:50px;">margin-left:50px;</h3>
+
+    <p>Margin shortcut:
+
+    <p>
+        margin:[top] [right] [bottom] [left]
+
+
+        <h2>Example 11</h2>
+
+        <div style="width:50%;height:50px;background-color:yellow;display:block;margin-left:auto;margin-right:auto;">Centered using magin-left:auto; and margin-right:auto;</div>
+
+        <h2>Example 12</h2>
+
+        <div style="width:50%;height:50px;background-color:red;color:white;display:block;padding:20px 20px 20px 20px;">
+            Here's padding set at 20px for all sides.  I'll type enough information in to make it work on at least three of the sides.
+        </div>
+
+    <p>Again, that shortcut is:
+
+    <p>padding:[top] [right] [bottom] [left]
+
+    <p>
+        ... and don't forget that padding ADDS to the overall dimensions of the content area.
+
+        <h2>Example 13</h2>
+
+
+        <div style="width:50%;height:50px;background-color:blue;color:white;display:block;padding:20px 20px 20px 20px;border-radius:10px;margin-bottom:10px;">
+            Rounded corners!
+        </div>
+
+        <div style="width:50%;height:50px;background-color:blue;color:white;display:block;padding:20px 20px 20px 20px;border-top-left-radius:20px;border-bottom-right-radius:20px;">
+            Rounded corners on top-left and bottom-right.
+        </div>
+
+        <h2>Example 14</h2>
+
+        <div style="width:50%;height:50px;background-color:green;outline-color:orange;outline-width:10px;outline-style:double;border:10px solid red;">Using the OUTLINE in addition to the border.  Crazy, huh?</div>
+
+        <h2>Example 15</h2><!-- JavaScript use this to show and hide info -->
+
+        <div style="width:50px;height:50px;background-color:orange;visibility:hidden;">You should not see this!</div>
+
+        <h2>Example 16</h2>
+
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:auto;margin-bottom:10px;">cursor:auto;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:crosshair;margin-bottom:10px;">cursor:crosshair;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:default;margin-bottom:10px;">cursor:default;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:help;margin-bottom:10px;">cursor:help;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:move;margin-bottom:10px;">cursor:move;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:pointer;margin-bottom:10px;">cursor:pointer;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:text;margin-bottom:10px;">cursor:text;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:wait;margin-bottom:10px;">cursor:wait;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:e-resize;margin-bottom:10px;">cursor:e-resize;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:ne-resize;margin-bottom:10px;">cursor:ne-resize;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:nw-resize;margin-bottom:10px;">cursor:nw-resize;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:n-resize;margin-bottom:10px;">cursor:n-resize;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:se-resize;margin-bottom:10px;">cursor:se-resize;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:sw-resize;margin-bottom:10px;">cursor:sw-resize;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:s-resize;margin-bottom:10px;">cursor:s-resize;</div>
+        <div style="width:200px;height:50px;background-color:purple;color:white;cursor:w-resize;margin-bottom:10px;">cursor:w-resize;</div>
+
+    <p>
+        You can also use a custom cursor.  It's risky business to do this, but if you choose to do it, better create a &quot;stacked&quot; list like so:
+
+        <!--use stack: if your custom cursor not work, use the default instead -->
+    <p>
+        cursor:url(myCursor.cur), default;
+        <hr>
+        <hr>
+        <span style="color:red;font-weight:bolder;">
+<pre>
+     o   o
+      )-(
+     (O O)
+      \=/
+     .-"-.
+    //\ /\\
+  _// / \ \\_
+ =./ {.-.} \.=
+     || ||
+     || ||  
+   __|| ||__
+  '---" "---'
+</pre>
+        </span>
+        <hr>
+
+    <p>
+        <ul style="list-style-type:none;">
+            <li style="float:left;margin:5px;"><a href="#n1">Font&Text</a>
+            <li style="float:left;margin:5px;"><a href="#n2">Color&Background</a>
+            <li style="float:left;margin:5px;"><a href="#n3">List&Table</a>
+            <li style="float:left;margin:5px;"><a href="#n4">Box || Block</a>
+        </ul>
+    </p>
+    <hr style="clear:both;" />

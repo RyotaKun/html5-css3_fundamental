@@ -1,0 +1,55 @@
+﻿.lesson_CSS h1{
+    font-family: Arial;
+    color:red;
+}
+.important {
+    color:purple;
+}
+#somesuch {
+    color:blue;
+}
+span.important{
+    color:darkgreen;
+}
+.lesson_CSS h1, .lesson_CSS h2, .lesson_CSS h3, p.important{
+    margin-left:50px;
+} 
+a:hover{
+    text-decoration: underline;
+}
+a:visited{
+    color: darkcyan;
+}
+.lesson_CSS p:first-letter{
+    font-size:3em;
+}
+.lesson_CSS article:before {
+    content: '*****';/*can use url to put in an image*/
+}
+.lesson_CSS p:first-of-type{
+    margin-right: 500px;
+}
+.lesson_CSS li:first-child{
+    font-style:italic;
+}
+.lesson_CSS li:last-child{
+    font-weight:bold;
+}
+.lesson_CSS li:nth-of-type(3)
+{
+    text-decoration:underline;
+}
+.lesson_CSS span[title] {
+    color: darkcyan;
+}
+.lesson_CSS span[title="first idea"]{
+    text-decoration: line-through;
+}
+/*href begins with email: href^="email"*/
+.lesson_CSS a[href^="email"]{
+    font-size:2em;
+}
+/*Title ends with idea = title$="idea"*/
+.lesson_CSS span[title$="idea"]{
+    text-decoration:overline;
+}

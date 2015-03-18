@@ -1,0 +1,497 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5 and CSS3 Fundamentals</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="styleLesson12.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="styleLessonFontface.css" media="screen" />
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>Channel9</h1>
+            <h2>HTML5 and CSS3 Fundamentals</h2>
+        </hgroup>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="myChiChiPage.html" target="_blank">My Chi Chi CSS page</a></li>
+                <li><a href="lesson_canvas.html" target="_blank">Canvas lesson</a></li>
+                <li><a href="lesson_svg.html" target="_blank">SVG lesson</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <article>
+            <h1><strong>Background Every Web Developer Needs to Know</strong></h1>
+            <h2>Introduction</h2>
+            <p>
+                In this <strong>article</strong> I'll describe the World Wide Web from a high level perspective, focusing on how a web page is request and delivered from a web server to a web browser.  Then, I want to talk about web browsers, how they interpret the HTML you write, differences between browsers, what are standards and to paraphrase the old joke "if Standards are so great, why are there so many of them?"  Finally, I'll talk about the thought process behind HTML5 and CSS3, why they were introduced and what they hope to achieve.
+            </p>
+            <h2>A Brief Technical Overview of the World Wide Web</h2>
+
+
+            <p>
+                The World Wide Web started out as a means for sharing scientific resources like research documentation between governmental and academic institutions.  It took time for the technologies and practices to evolve beyond its original purpose.
+            </p>
+            <p>From a technical perspective, the World Wide Web is comprised of several technologies ... first, it involves a simple markup (the Hyper-text Markup Language, or HTML) to both structure and format textual information.  When first introduced its claim to fame was the hyperlink which allowed the publisher of a document to add a link to other research papers available from  across the world, creating a virtual web of information (thus, the name).  Second, one or more interlinked pages are published to a server that is connected to an open network which we know today as the Internet.</p>
+
+            <p>A protocol was devised that specialized in allowing a request/response-style communication between two computers.  In other words, one user requests a document by typing an address for a document into a special program called a web browser, and the web browser packages up that request and sends it out into the network.  The request takes the form of a specially formatted packet of data.  You can think of this packet of information like a self-addressed stamped envelope -- containing both the address of the information requested and the address where that information should be sent back to.  This specially formatted packet is known as Hyper-text Transfer Protocol, or rather, HTTP, and for simplicity's sake you can think of it merely as an electronic envelope.  See Figure 1 for the types of information sent in the HTTP Request and HTTP Response messages.</p>
+
+            <figure>
+                <img src="img/http-message.gif" alt="A diagram of the parts of an HTTP Message" />
+
+                <figcaption>
+                    Figure 1. The HTTP Request and Response messages contains important information that allows communication back and forth between the client and the server.
+                </figcaption>
+            </figure>
+            <p>The HTTP request message is routed through a series of network wires and routers (i.e., devices that know how to forward HTTP messages closer to their destination) spanning the globe using (ideally) the shortest route possible until it arrives at its destination, the web server at the address the requestor typed into the web browser.  The web server responds to the request by locating the requested document or resource (in the figure, the index.html file), packaging it up using the same HTTP style envelope, then sending the requested document back on to the network.  The connection would only take a fraction of a second and once the computer served up the request, it would not retain any information about that request in its memory.  See Figure 2 for a diagram of interactivity between the client and server computers.</p>
+
+            <figure>
+                <img src="img/www-diagram.gif" alt="A diagram of route from the user request to the web server and back again" />
+                <figcaption>
+                    Figure 2. (1) The HTTP Request is (2) routed across the internet to the (3) server which serves the (4) requested file back in the body of an HTTP Response message. (5) The HTTP Response is routed across the internet to the original requestor.  (6) The requested file is parsed and displayed in the user's web browser.
+                </figcaption>
+            </figure>
+            <p>Once the requested document is delivered through the network back to requestor, that document is loaded into the web browser.  The browser parses through the HTML and decides how to render (or rather, display) its content and appearance on the computer screen.</p>
+
+            <h3>What Are Domain Names?</h3>
+
+            <p>
+                The request that users type into web browsers originally looked something like this:
+                <br />
+                http://157.123.23.44/index.htm
+            </p>
+
+            <p>
+                Why the series of numbers?  Each computer on this network was assigned an address, called an Internet Protocol Address, or IP Address.  This was assigned through a lower-level protocol called Transmission Control Protocol / Internet Protocol, or rather, TCP/IP.  It was the foundational technology that allowed requests to be routed to the appropriate server that contained a given resource, or rather, web page.  However, because the IP address for a computer would change occasionally for a given computer or institution, they devised a system called the Domain Name System, or rather, the DNS, to turn a friendly name like:
+                <br />
+                mit.edu
+                <br />
+                <br />
+                ... into the actual "location", like:
+                <br />
+                <br />
+                18.72.0.3
+            </p>
+
+            <p>A system of top-level Domain Names was created ... .edu for educational institutions, .mil for Military, .gov for Government, .net for Network related resources, .org for Non-profit organizations, .com for Commercial organizations, etc.  Later, other countries and a plethora of top-level domains were added and others for commercial and other interests.</p>
+
+            <p>The web browser will query databases of domain names and their associated IP Addresses and will translate the requests automatically for the user without his or her knowledge.  Typically, each Internet Service Provider has a Domain Name System server that can be queried for resolving Domain Names into IP Addresses.  The databases that contain this Domain Name information stay synchronized around the globe, although sometimes the synchronization process can take minutes or hours to complete.</p>
+
+            <h3>The Purpose for Standards Groups</h3>
+
+            <p>At every step of the way, one or more organizations were formed to help identify standards for these technologies comprised of experts and luminaries who were pushing these technologies forward.  They would meet both virtually and in person to define and discuss the merits of adding new features to a given standard and would encourage organizations who were creating hardware and software to follow these standards so that products from different vendors could work together seamlessly.  Perhaps one of the most influential and important standards body you will hear about is the W3C, or rather, the World Wide Web Consortium.  They were one of the groups responsible for the latest version of HTML, version 5.  Another is the WHATWG, or rather, the Web Hypertext Application Technology Working Group, which is comprised of a subset of the W3C and several additional experts and organizations that have a  vested interest in the vitality of the World Wide Web.  The background of HTML5, the previous versions of HTML, as well as the standards organizations involved is fascinating because you get a peek into both the process and the politics of these organizations.</p>
+
+            <h2>Recap of the World Wide Web Technical Overview</h2>
+
+            <p>From a purely technical perspective, you should now understand a few things:</p>
+
+            <ol>
+                <li>
+                    First of all, hopefully you now have an answer to the question everyone first starting out asks: "why the heck did they make URLs so convoluted?  Wouldn't it be easier to just type in 'microsoft' instead of 'http://www.microsoft.com'?"  There's an evolution of technologies, and furthermore, it was never intended for use by the masses.  At some point commercialized and individual access to the internet dwarfed the intended use, however the technologies created 30 years ago are still in play.
+                </li>
+                <li>
+                    Second, hopefully you will begin see the purpose of things like http:// ... in which you are saying you want to access a specific channel of traffic, HTTP, or rather, World Wide Web traffic, as opposed to FTP (File Transfer Protocol) for working with large files, SMTP (Simple Mail Transfer Protocol) for sending email, and so on.
+                </li>
+                <li>
+                    Third, hopefully you see the purpose of .com, .edu, .net and so on ... at least, you understand the original purpose, and you understand how those domain names are translated into the actual IP Addresses that are utilized by routers to move traffic around the internet to it's intended destination.
+                </li>
+                <li>
+                    Fourth, hopefully you can see that the specifics of HTML - and all other standards - are decided on by a body of individuals who understand what is needed and propose and debate the merits of adding or removing parts of a given specification.  You should also see the purpose for these standards - so that organizations creating hardware and software to support the World Wide Web can achieve a high degree of interoperability.
+                </li>
+                <li>
+                    Fifth, hopefully you can see the role that each component plays in the exchange of documents and other resources ... the web browser is responsible for interacting with the end user who requests a document by typing in a web address or clicks on a hyperlink.  It also packages up that request and begins the process of requesting the document from it's host, the computer called the web server.  The message is packaged using the HTTP protocol, which you can think of as an electronic envelope geared towards stateless request / response style transmissions between two computers.  Routers are special devices that know how to interpret the address encoded in electronic envelopes, or rather, the HTTP messages, and route them closer to their ultimate destination.  A web server is merely a computer at a given web address that is listening for HTTP requests, and if the address is valid, returns the requested document or resource using the same HTTP message addressing as a response.
+                </li>
+            </ol>
+            <h2>One Final Note About Our Overview</h2>
+
+            <p>Let me add that (a) I distilled this down and over-simplified it to keep it simple at a high level.  You could spend months or years learning more about any single component of what I just described in a few sentences, and (b) after 30 years of use and technological advancement, web development has gotten a LOT more sophisticated.  And most pertinent to this series of lessons, web development techniques and technologies have become much more sophisticated.  While most of the underpinnings are still in play, some of the technologies have been refined and expanded.</p>
+
+            <p>Take HTML for example.  In early versions, HTML was called on to do "double-duty" ... it expressed both the structure of a document as well as its aesthetic layout.  In other words, the same syntax defined both the fact that there would be fie paragraphs separated by a series of headings indicating the relationship of those paragraphs to each other, AS WELL AS the font types, colors and sizes, the border around the web page, the rounded corners and other adornments to make the web page attractive.  While scientists and academicians may not be overly concerned about the aesthetics, at least not 30 years ago, now the World Wide Web is used for eCommerce, web applications that mimic desktop applications, gaming and more.</p>
+
+            <p>More recently, these two responsibilities - of structure and presentation - have been split in two ... HTML should define the structure of the document, and Cascading Style Sheets should control the presentation, or rather, the style or aesthetic qualities of a web page.  We'll see how this separation of responsibilities plays out throughout this course.</p>
+        </article>
+        <hr />
+        <article>
+            <h1>
+                How Web Browsers Parse HTML
+            </h1>
+            <p>One final topic I want to talk about that affects modern web development is the implementations of various web browsers.  As you'll recall, once the requested web page has been returned, it will be parsed by a web browser then displayed on screen.</p>
+            <p>
+                There are four major parsing and rendering engines that are popular today.
+            </p>
+            <ul>
+
+                <li>
+                    Trident, the web browser engine from Internet Explorer, is used by many applications on the Microsoft Windows platform, such as netSmart, Outlook Express, some versions of Microsoft Outlook, and the mini-browsers in Winamp and RealPlayer.
+                </li>
+                <li>
+                    KDE's open-source KHTML engine is used in KDE's Konqueror web browser and was the basis for WebKit, the rendering engine in Apple's Safari and Google's Chrome web browsers.
+                </li>
+                <li>
+                    Gecko, the Mozilla project's open-source web browser engine, is used by a variety of products derived from the Mozilla code base, including the Firefox web browser, the Thunderbird e-mail client, and SeaMonkey internet suite.
+                </li>
+                <li>
+                    Opera Software's proprietary Presto engine is licensed to a number of other software vendors, and is used in Opera's own web browser.
+                </li>
+            </ul>
+            <p>They are *mostly* the same, in so much that a web page will look mostly the same regardless of which web browser it is loaded into.  However it is the differences between them that most people discuss because it provides design challenges.</p>
+
+            What do I mean when I use the terms "parse" and "render"?
+
+            <p>The term "parse" refers to the process of breaking apart the HTML document to better "understand" the instructions coded there in.  During this phase, other resources, like external CSS files or JavaScript files, or images, must be requested so that the browser can get a complete picture of the code it is responsible for ultimately rendering.  After all those external resources are downloaded and analyzed, they are typically loaded into the computer's memory as a tree, or hierarchy, of software objects then passed to the rendering engine component of the browser - more about that in a moment.  When I refer to these hierarchical software objects, I simply mean that some objects "own" or are parents to other objects ... a simple example might be that a paragraph is a parent to each sentence, which is a parent to each word.  There might be other tags and graphical elements that the paragraph owns as well.  This is simply part of the process of deciding what technique the browser will use to ultimately render the HTML to the screen.</p>
+
+            <h2>Characteristics of HTML5 Web Pages</h2>
+
+            <p>
+                Each web page should declare which standard it has promised to adhere to.  This is called a DOCTYPE, and it is the reason that we typed this:<br>
+                <br>
+                &lt;!DOCTYPE html&gt;
+                <br>
+                <br>
+                ... at the very top of our web page.  This instruction told any web browser that may open it that it should be evaluated as an HTML5 document, as opposed to an HTML document of another version.  Every instruction should adhere to the HTML5 specification (which we'll talk about in a moment).  If it doesn't, the renderer may not know how to properly apply the rules of HTML5 to the document and must drop back into something called "quirks mode" where the browser will take a best guess on how to best render the web page.  "Quirks mode" exists because there are plenty of poorly coded HTML page in the world and the web browser wants to try to the best of its ability to render something to the end user.  If web browsers through up their hands and complained each time a web developer wrote bad code, the World Wide Web experience would be dreadful.  Since writing HTML that doesn't validate against a standard can produce inconsistent results, web developers are strongly encouraged to take great care in the code they write.  In fact, most tools that allow you to write HTML pages incorporate a validator to ensure the code you write validates against your chosen HTML specification.  We'll use an HTML5 validator that's available on the internet for free in just a moment.
+            </p>
+
+            <p>Once the document has been parsed, the browser can begin the rendering process.  "Render" means that the code will be translated into visual elements on screen using algorithms and rules coded into the rendering engine, the components in the web browser responsible for this activity.  The rendering engine will figure out how much screen space is available, and will begin to dole out the screen real estate equitably to lay out the various parts of the page onto the computer screen.  There's much more to it than that, but again I'm just trying to speak at a very high level about what happens here.</p>
+
+            <p>And here is where things start to get messy, because I said all of that to say this: each rendering engine is written by different developers each determining how to satisfy the requirements of the specification in their code.  Most of the time, your valid HTML5 code will look "close enough" on most browser vendor and versions.  However, that's unfortunately not always the case and so it is important to set your expectations and give you a little heads up on how to deal with the inevitable situation where you want to use some new feature that is either supported differently in different browsers or is not supported at all in older browsers.</p>
+
+            <p>Let's start with the question if there's a standard in place, why do browser vendors implement functionality differently?  Often this is a matter of interpretation of the specification.  The specification details how something should work and provides some scenarios.  From a technical perspective, there are situations not covered explicitly by the specification and vendors need to decide how THEY will handle it.  In other cases, different vendors have different timeframes on when they plan on supporting the functionality.  This has to do often with non-technical issues like budgets and resources and release schedules.  For example, I saw a graphic comparing the number of features added to IE10 that were not in IE9.  It was staggering, and strategically IE10 has a goal of supporting the release of Windows 8.</p>
+
+            <p>If you're not aware, you can build Metro-style Windows applications using HTML5, CSS3 and JavaScript via the WinRT API.  Prior versions of IE9 did not have this requirement, and so the feature set it supported was decidedly smaller in preparation for a larger budget and team assigned to IE10.</p>
+
+            <p>Couple different interpretations of the specification with the fact that parts of the specification are not even complete, like I said in the first lesson, and you have a recipe for a divergence of implementations of the standards.  Again, much of the standard works correctly.</p>
+
+            <p>So, what to do when you as a web developer want to make sure that your web page is rendered correctly in as many web browsers as possible?  First of all, you need to become aware of those situations where implementations vary between the rendering engines.  Testing your web pages in multiple browsers and on multiple devices will help identify those in your particular web pages, but over time, as you become more familiar with HTML and CSS you'll know where the potholes are.  Secondly, you can take one of two approaches ... the first approach is called "Graceful Degradation" where you build your ideal web page to design at the latest version of a target web browser, then use CSS and JavaScript, images and emulation scripts that attempt to duplicate the features supported by the latest versions of one or more web browsers.  Using this first technique, you are trying to get older browsers or current versions of other browsers to do things they are not capable of using copious sections of alternate HTML, CSS and JavaScript.  You spend a lot of time wrestling with the site to get it as close as possible in older or less capable browsers.</p>
+
+            <p>Alternatively, you could take the "Progressive Enhancement" approach, meaning you start out by keeping the web page you're authoring as simple and straight forward as possible making sure the site looks as good as possible in baseline browsers ... in other words, you decide on a set of older web browsers as the baseline, make sure the web page looks good in those browsers, then add in features that are supported in newer browsers to enhance the web site.  In this way you ensure that users with older browsers still have a good experience, you focus on writing good, solid HTML code, and for those who are running newer browsers you are adding features that will simply enhance their experience.  Over time, you re-visit the web page's code, replacing those bits those older parts with those parts that were merely enhancements.  People will eventually upgrade their browsers and as they do, your baseline can creep forward.  This is an ongoing migration strategy.  Most developers agree in principle that this is the right approach, even if the implementation can be tricky at times.  You have to decide whether some of the things I'll demonstrate here are worth the price you'll pay in alienating potential users with older web browsers that don't yet support parts of HTML5 and CSS3.  You should always be testing your work in multiple web browsers across many different versions to know exactly how your web page performs.  And, do as I say, not as I do, because that is a time-consuming and therefore expensive process.  Real professionals take this seriously and I would recommend you do so, too.  You may see me cut corners at times -- do as I say, not as I do.</p>
+
+            <aside>
+                If you have a captive audience, the experience is a little different.  For example, In Windows 8, HTML5 developers can rely on Internet Explorer 10's expanded HTML5 support to build user interfaces that run as Metro-style applications utilizing the WinRT API.  In this case, you know for a fact where your HTML5 will be rendered and by whom, and you are free to use the full set of HTML5 features IE10 supports without having to worry about other browser vendors and version.  Another example might be that someday you're building web-based intranet applications that will run inside of your enterprise on an Intranet.  In this case, your IT department may have standardized on a specific web browser.  If this is the case, you are free to use the HTML features supported by that specific vendor and version of web browser.
+            </aside>
+
+            <h2>Conclusion</h2>
+            <p>
+                Hopefully you can see the issues surrounding HTML5 and CSS3 with regards to their support by various versions and vendors of web browsers and two different thought processes on how to incorporate HTML5 into your own work.
+            </p>
+        </article>
+    </section>
+    <hr />
+    <section>
+        <h1>Lesson: Working with the Anchor Tag</h1>
+        <article>
+            <h2>Anchor Tag</h2>
+            <p><a href="http://www.bing.com">To Bing same instance</a></p>
+            <p><a href="http://www.bing.com" target="_blank">To Bing new instance</a></p>
+            <p><a href="test.html">To a test page</a></p>
+            <p><a href="#bottom">To Bottom</a></p>
+            <a name="article2"></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed nisi orci, sit amet bibendum nulla. Nunc felis ligula, volutpat bibendum vulputate vel, dapibus vitae nibh. Ut commodo facilisis turpis eget dapibus. Proin pulvinar pretium turpis, a consectetur odio auctor eu. Vivamus vel massa id diam tincidunt congue. Donec condimentum elit non metus vestibulum pharetra. Praesent eu eros magna. Suspendisse potenti. Vestibulum nec nulla eu risus aliquam ullamcorper. Duis at massa vel purus mollis sollicitudin. Etiam non nunc in leo fringilla hendrerit. Sed dictum lacus nec eros dignissim eu condimentum tortor placerat.</p>
+
+            <p>Nulla varius eros in nulla ultrices et ullamcorper orci feugiat. Cras at libero non ligula tempor venenatis. Cras gravida purus et lacus laoreet sed bibendum augue venenatis. Pellentesque sed enim non turpis fringilla facilisis vulputate dictum turpis. Aliquam fermentum massa nec elit lobortis pellentesque. Nunc mollis risus dictum erat adipiscing varius. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi accumsan porttitor ligula at ultricies. Donec varius leo ac risus tincidunt eu molestie quam laoreet. Etiam eget enim sem. Aenean tortor augue, dictum porttitor rutrum nec, malesuada et lorem. In vestibulum, orci sed feugiat vulputate, risus sem tincidunt tortor, adipiscing iaculis dolor risus ac leo.</p>
+
+            <p>Praesent commodo dolor eu ante gravida vestibulum. Nunc viverra ligula ut felis vehicula tempor. Vivamus ac metus neque. Sed ornare ipsum vel nulla molestie at feugiat ipsum dapibus. Aliquam egestas vehicula risus et aliquet. In hac habitasse platea dictumst. Nunc mollis ante est, non ultrices massa. Donec bibendum mattis cursus. Proin consectetur, lorem at rutrum sagittis, mauris tellus venenatis augue, id dapibus sapien mauris at magna. Nulla sapien eros, malesuada non elementum ac, cursus sit amet felis. Donec eget sapien vel nibh luctus faucibus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque gravida vulputate volutpat. Sed quis lorem at velit iaculis accumsan sed non lorem. Sed in egestas massa. Maecenas vehicula volutpat elit, ac suscipit erat condimentum non.</p>
+
+            <p>Nulla auctor pulvinar erat, luctus mattis risus accumsan sit amet. In hac habitasse platea dictumst. Morbi ante libero, volutpat sit amet pulvinar sed, eleifend eu nunc. Pellentesque id quam est, vitae tristique massa. Vestibulum gravida tincidunt sem, et luctus tortor ultrices vel. Ut lectus ipsum, iaculis sit amet eleifend ut, gravida nec mi. Duis rhoncus massa molestie elit tristique euismod hendrerit lorem varius. Nam aliquet mattis justo, ut ultrices massa fermentum ac. Curabitur nisi erat, mattis et consectetur posuere, sagittis et ligula.</p>
+
+            <p>Nunc pulvinar nisi ac ipsum fermentum consequat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam scelerisque mauris vitae nisl euismod ut laoreet quam pellentesque. Mauris orci nisl, pharetra vitae accumsan eu, condimentum vel tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in est quis metus vestibulum aliquam a eu enim. Maecenas dignissim massa vel diam luctus id vehicula dolor consequat. Nullam at magna condimentum est varius sollicitudin vel eu dolor. Pellentesque euismod fermentum libero a lobortis. Quisque suscipit risus sit amet turpis aliquet non lobortis nulla imperdiet. Praesent pellentesque vulputate viverra.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed nisi orci, sit amet bibendum nulla. Nunc felis ligula, volutpat bibendum vulputate vel, dapibus vitae nibh. Ut commodo facilisis turpis eget dapibus. Proin pulvinar pretium turpis, a consectetur odio auctor eu. Vivamus vel massa id diam tincidunt congue. Donec condimentum elit non metus vestibulum pharetra. Praesent eu eros magna. Suspendisse potenti. Vestibulum nec nulla eu risus aliquam ullamcorper. Duis at massa vel purus mollis sollicitudin. Etiam non nunc in leo fringilla hendrerit. Sed dictum lacus nec eros dignissim eu condimentum tortor placerat.</p>
+
+            <p>Nulla varius eros in nulla ultrices et ullamcorper orci feugiat. Cras at libero non ligula tempor venenatis. Cras gravida purus et lacus laoreet sed bibendum augue venenatis. Pellentesque sed enim non turpis fringilla facilisis vulputate dictum turpis. Aliquam fermentum massa nec elit lobortis pellentesque. Nunc mollis risus dictum erat adipiscing varius. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi accumsan porttitor ligula at ultricies. Donec varius leo ac risus tincidunt eu molestie quam laoreet. Etiam eget enim sem. Aenean tortor augue, dictum porttitor rutrum nec, malesuada et lorem. In vestibulum, orci sed feugiat vulputate, risus sem tincidunt tortor, adipiscing iaculis dolor risus ac leo.</p>
+
+            <p>Praesent commodo dolor eu ante gravida vestibulum. Nunc viverra ligula ut felis vehicula tempor. Vivamus ac metus neque. Sed ornare ipsum vel nulla molestie at feugiat ipsum dapibus. Aliquam egestas vehicula risus et aliquet. In hac habitasse platea dictumst. Nunc mollis ante est, non ultrices massa. Donec bibendum mattis cursus. Proin consectetur, lorem at rutrum sagittis, mauris tellus venenatis augue, id dapibus sapien mauris at magna. Nulla sapien eros, malesuada non elementum ac, cursus sit amet felis. Donec eget sapien vel nibh luctus faucibus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque gravida vulputate volutpat. Sed quis lorem at velit iaculis accumsan sed non lorem. Sed in egestas massa. Maecenas vehicula volutpat elit, ac suscipit erat condimentum non.</p>
+
+            <p>Nulla auctor pulvinar erat, luctus mattis risus accumsan sit amet. In hac habitasse platea dictumst. Morbi ante libero, volutpat sit amet pulvinar sed, eleifend eu nunc. Pellentesque id quam est, vitae tristique massa. Vestibulum gravida tincidunt sem, et luctus tortor ultrices vel. Ut lectus ipsum, iaculis sit amet eleifend ut, gravida nec mi. Duis rhoncus massa molestie elit tristique euismod hendrerit lorem varius. Nam aliquet mattis justo, ut ultrices massa fermentum ac. Curabitur nisi erat, mattis et consectetur posuere, sagittis et ligula.</p>
+
+            <p>Nunc pulvinar nisi ac ipsum fermentum consequat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam scelerisque mauris vitae nisl euismod ut laoreet quam pellentesque. Mauris orci nisl, pharetra vitae accumsan eu, condimentum vel tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in est quis metus vestibulum aliquam a eu enim. Maecenas dignissim massa vel diam luctus id vehicula dolor consequat. Nullam at magna condimentum est varius sollicitudin vel eu dolor. Pellentesque euismod fermentum libero a lobortis. Quisque suscipit risus sit amet turpis aliquet non lobortis nulla imperdiet. Praesent pellentesque vulputate viverra.</p>
+
+            <h1>I'm at the bottom</h1>
+            <a name="bottom"></a>
+            <p><a href="#article2">Back to this article Top</a></p>
+        </article>
+    </section>
+    <hr />
+    <section>
+        <h1>Lesson - H1, H2, H3, H4, H5, H6</h1>
+        <article>
+            <h2>Each H has a different rank from 1-6</h2>
+            <hr />
+            <h1>H1</h1>
+            <h2>H2</h2>
+            <h3>H3</h3>
+            <h4>H4</h4>
+            <h5>H5</h5>
+            <h6>H6</h6>
+        </article>
+    </section>
+    <hr />
+    <section>
+        <h1>Lesson - Lists</h1>
+        <article>
+            <ul>
+                <li>
+                    Moe
+                </li>
+                <li>
+                    Larry
+                </li>
+                <li>
+                    Curly
+                </li>
+            </ul>
+
+            <ol>
+                <li>
+                    Alien
+                </li>
+                <li>
+                    Aliens
+                </li>
+                <li>
+                    Alien 3
+                </li>
+                <li>
+                    Alien: Resurection
+                </li>
+                <li>
+                    Prometheus
+                </li>
+            </ol>
+            <!--Description list-->
+            <dl>
+                <dt>
+                    autodidact
+                </dt>
+                <dd>
+                    a self taught person
+                </dd>
+                <dt>
+                    utilitarianism
+                </dt>
+                <dd>
+                    The doctrine that actions are right if they are useful or for the benefit of a majority
+                    </dd><dd>
+                    The doctrine that an action is right insofar as it promotes happiness, and that the greatest happiness of the greatest number should be the guiding principle of conduct
+                </dd>
+            </dl>
+<pre><code>
+            public class Hello1
+            {
+            public static void Main()
+            {
+            System.Console.WriteLine("Hello, World!");
+            }
+            }
+</code></pre>
+<pre>
+                o   o
+                 )-(
+                (O O)
+                 \=/
+                .-"-.
+               //\ /\\
+             _// / \ \\_
+            =./ {,-.} \.=
+                || ||
+                || ||
+              __|| ||__
+             `---" "---'
+</pre>
+        </article>
+    </section>
+    <hr />
+    <section>
+        <h1>Lesson - Working with tables</h1>
+        <article>
+            <h2>Johnathan Toews Stats</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Seaon</th>
+                        <th>Goals</th>
+                        <th>Assists</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>2009-2010</th>
+                        <td>25</td>
+                        <td>43</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">2009-2010 - bla bla bla bla</td>
+                    </tr>
+                    <tr>
+                        <th>2010-2011</th>
+                        <td>25</td>
+                        <td>43</td>
+                    </tr>
+                    <tr>
+                        <th>2011-2012</th>
+                        <td>25</td>
+                        <td>43</td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Totals</th>
+                        <td>4545</td>
+                        <td>123123</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </article>
+    </section>
+    <hr />
+    <section>
+        <h1>Lesson - Form</h1>
+        <!--Form demonstration, no form.aspx is available-->
+        <form method="POST" action="form.aspx" >
+            <p>
+                <lable>Customer Name:</lable>
+                <input type="text" id="customerName" name="customerName" maxlength="30" />
+            </p>
+            <fieldset>
+                <legend>Pizza Size</legend>
+                <p><label><input type="radio" name="size" value="small" checked/> Small (10 inch)</label></p>
+                <p><label><input type="radio" name="size" value="medium" /> Medium (12 inch)</label></p>
+                <p><label><input type="radio" name="size" value="large" /> Large (14 inch)</label></p>            
+            </fieldset>
+
+            <!--Selection-->
+            <fieldset>
+                <legend>Pizza Toppings</legend>
+                <p><label><input type="checkbox" name="toppings" value="pepper" /> Pepper</label></p>
+                <p><label><input type="checkbox" name="toppings" value="extraCheese" checked/> Extra Cheese</label></p>
+                <p><label><input type="checkbox" name="toppings" value="mushroom" /> Mushroom</label></p>
+                <p><label><input type="checkbox" name="toppings" value="onions" /> Onions</label></p>
+            </fieldset>
+            <p>Crust
+            <select name="crust" multiple>
+                <option value="crust1">Normal</option>
+                <option value="crust2" selected>Thin</option>
+                <option value="crust3">Thick</option>
+            </select>
+            </p>
+            <p><label>Delivery Instructions: 
+                <textarea name="deliveryInstruction" cols="50" rows="5" maxlength="1000">
+How do we get to your house?
+                </textarea>
+                </label></p>
+            <p><input type="submit" value="Continue to step 2"/></p>
+            <p><input type="reset" value="Reset Form" /></p>
+        </form>
+    </section>
+    <hr />
+    <section>
+        <h1>Lesson - Form validation and enhancements</h1>
+        <h2>Creating Forms</h2>
+        <form method="POST" action="#">
+            <h3>Email></h3>
+            <p><label><span>Email Input: </span><input type=email name=emailInput required /></label></p>
+            <p><label><span>Telephone Input: </span><input type=tel name=telInput required /></label></p>
+            
+            <h3>URL</h3>
+            <p><label><span>URL Input: </span><input type=URL name=urlInput required /></label></p>
+            
+            <h3>Numeric Value</h3>
+            <p><label><span>Number Input: </span><input type=number name=numberInput required /></label></p>
+            <p><label><span>Range Input: </span><input type=range name=rangeInput required value="42" /></label>
+            Value set to 42. By default, values beween 0 and 100</p>
+            
+            <h3>Data List</h3>
+            <p><label><span>Data List:</span>
+                <input type="text" list="someList" />
+                <datalist id="someList">
+                    <option label="First" value="First"></option>
+                    <option label="Second" value="Second"></option>
+                    <option label="Third" value="Third"></option>
+                </datalist>
+                </label></p>
+            
+            <h3>Attributes</h3>
+            <p><label><span>Auto Focus: </span><input type="text" autofocus /></label></p>
+            <p><label><span>Pattern: </span><input type="text" pattern="^\d{5}(-\d{4})?$" /></label>Hint: Use a valid/invalid Postcode</p>
+            <p><label><span>Place Holder: </span><input type="text" placeholder="Hello There" /></label></p>
+            <p><label><span>Required field: </span><input type="text" required /></label></p>
+            <p><label><span>Condition field Step: </span><input type="number" step="5" /></label>Hint: Must be divisible by 5</p>
+
+            <p><button type="submit" name="submitButton">Submit</button></p>
+        </form>
+    </section>
+    <hr />
+    <section class="lesson_CSS">
+        <h1>Lesson 12 - Fun With CSS Selectors</h1>
+
+        <h2>This is a gratuitous use of the h2</h2>
+
+        <h3>Ditto</h3>
+
+        <article>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="http://www.wikipedia.org">Ut ac tellus sit amet felis interdum sollicitudin et in ante.</a> Nam pellentesque, ante posuere consectetur pharetra, velit nibh consectetur felis, id consectetur nisi nibh sit amet turpis. Etiam vitae commodo diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; <span class="important">Morbi vel urna dolor</span>. Aenean vitae dolor feugiat erat convallis euismod. Duis blandit pretium blandit. Quisque diam nisl, faucibus quis cursus nec, laoreet sit amet urna. In mollis semper risus a vehicula. Maecenas at neque massa, ac rutrum felis. Donec adipiscing eleifend turpis venenatis auctor. Phasellus consectetur nibh et urna tempus at molestie leo sodales. Donec faucibus faucibus ultricies. Nunc at aliquet nunc.</p>
+
+            <ul>
+                <li>Vestibulum luctus diam non tellus euismod placerat. Quisque adipiscing euismod est, a imperdiet dolor ultricies et.</li>
+                <li>Fusce quis libero leo, non porta erat. Suspendisse tincidunt ligula metus, imperdiet congue tortor. Morbi venenatis aliquet elit ut tincidunt. Suspendisse mattis pharetra blandit.</li>
+                <li>Ut purus metus, mollis quis dapibus sed, pulvinar a nisl.</li>
+                <li>Etiam aliquam, leo gravida aliquam tristique, justo nulla mattis massa, ac vulputate purus erat ac ipsum. In vitae erat quis eros fermentum blandit. Etiam ut dui diam.</li>
+                <li>Aenean lobortis rhoncus pellentesque. Nunc euismod, sem vitae imperdiet dignissim, nunc nisl interdum ligula, vel congue erat dolor id lectus. Aenean mattis dui non metus vulputate dictum.</li>
+            </ul>
+
+        </article>
+
+        <article>
+
+            <p id="somesuch">Donec at nunc eget diam cursus tristique. <a href="email:bobtabor@yahoo.com">Maecenas ut ligula eget sem interdum aliquam</a>. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus id lorem id eros tristique feugiat at at quam. Cras sed mollis elit. Sed volutpat, velit sed eleifend porttitor, diam lorem commodo eros, et iaculis nibh lorem in leo. Aliquam euismod faucibus ullamcorper. Proin tristique ante luctus sapien volutpat interdum. Mauris non risus et velit rhoncus ullamcorper eu nec quam. Nullam ullamcorper, quam sed lobortis pellentesque, lorem lacus euismod augue, a sollicitudin sapien metus vitae nulla.</p>
+
+            <p class="important">Etiam eget diam sed enim luctus molestie rutrum tincidunt sem. 
+            <span title="first idea">Fusce a faucibus lectus</span>. Nam augue leo, <span title="second suggestion">dignissim at hendrerit blandit</span>, fringilla at tortor. In auctor, <span title="third idea">tellus id facilisis commodo</span>, tellus elit lobortis ipsum, <span title="fourth tidbit">vel ultrices dolor</span> augue vel risus. Vivamus id venenatis augue. Pellentesque pulvinar ornare massa ut mollis. Morbi fringilla consectetur vulputate. Sed sagittis condimentum mi at volutpat. Pellentesque fringilla porta nunc, quis egestas leo sodales non. Ut pulvinar, mauris nec luctus consectetur, massa lorem blandit mauris, vitae porta arcu nibh eu metus. Aenean condimentum purus sodales felis blandit accumsan. Donec justo urna, congue non lobortis at, laoreet eu dui. Sed turpis ante, hendrerit cursus ultricies nec, imperdiet nec est. Donec varius eleifend feugiat. Ut faucibus, est ac tincidunt fermentum, nulla est convallis orci, non semper risus quam quis est.</p>
+
+            <p class="important">Duis a ipsum enim. Duis dictum viverra nulla non mattis. Proin sed erat tortor, ut condimentum dolor. Sed ultrices nulla vel eros sagittis id pharetra neque dictum. In hac habitasse platea dictumst. Pellentesque interdum, leo eu mollis sollicitudin, ligula neque fringilla massa, eu vestibulum quam justo nec lacus. Cras faucibus libero eu nisl porttitor non volutpat quam elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse eleifend tempus tellus, ut facilisis purus pulvinar ut.</p>
+
+        </article>
+    </section>
+    <section class="lesson_fontface">
+        <h1>Lesson 17 - font-face</h1>
+
+        <p>In sed nunc nec mauris feugiat suscipit. Cras venenatis enim sem. Donec pretium volutpat eros, vel pretium turpis accumsan id. Fusce porttitor volutpat felis non convallis. Aliquam erat volutpat. Aliquam lobortis pretium porta. Vestibulum a justo leo, a pulvinar lacus. Praesent laoreet nisi nec dui bibendum cursus. Donec in lobortis tortor. Quisque urna diam, vehicula auctor vulputate eget, laoreet at sem. Nulla varius pretium pharetra. Mauris sed risus vitae lorem sollicitudin convallis vitae hendrerit justo. Maecenas ligula enim, aliquam ac molestie quis, lobortis sit amet elit. Nam eu purus et mauris fermentum malesuada. Suspendisse potenti.</p>
+    </section>
+    <section class="lesson_videoemb">
+        <h1>Embedding Video in HTML5</h1>
+
+        <video src="videos/30seconds.mp4" controls poster="img/poster.jpg">
+            <p><strong>Unfortunately your browser cannot play the video format.  You may <a href="30seconds.mp4">right-click this link and choose Save As</a> to download this video instead.</strong></p>
+        </video>
+        <p>There's no video codec format standard.  Internet Explorer supports the popular H.264 codec (typically .mp4, but other formats may include H.264 as well).</p>
+
+        <p>This will only work for "progressive downloads" (aka, "pseudo-streaming", not true streaming (using a media server, so no RTMP/E/T/S, MMS, etc.).  Therefore no DRM, etc.  Maybe some day ...</p>
+
+        <ul>
+            <li>poster - what is to be displayed during download of video</li>
+            <li>controls - turns on the video player controls</li>
+            <li>autoplay - starts playing video as soon as completely downloaded</li>
+            <li>preload - start downloading video immediately so that its ready when the user wants to play it</li>
+            <li>loop - continuous loop</li>
+            <li>muted - not working yet in IE, turns off volume</li>
+            <li>autoplay - starts playing video as soon as completely downloaded</li>
+            <li>width / height - control dimensions</li>
+        </ul>
+    </section>
+    <footer>
+        <small>Copyright © 2015 Sang M Truong</small>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="myChiChiPage.html" target="_blank">My Chi Chi CSS page</a></li>
+                <li><a href="lesson_canvas.html" target="_blank">Canvas lesson</a></li>
+                <li><a href="lesson_svg.html" target="_blank">SVG lesson</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
